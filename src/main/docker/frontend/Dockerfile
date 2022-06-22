@@ -24,8 +24,8 @@ RUN rm -rf ./*
 COPY --from=builder /app /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY /src/main/docker/frontend/default.conf /etc/nginx/conf.d/
-RUN rm -rf /target
-RUN rm -rf /src/
+RUN rm -rf target
+RUN rm -rf src
 EXPOSE 9000
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
