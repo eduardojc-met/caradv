@@ -10,8 +10,7 @@ COPY ["package.json",".npmrc","/webpack/webpack.prod.js", "./"] .
 COPY . .
 RUN rm -rf ./target/*.jar
 RUN npm config set strict-ssl false
-#RUN npm install
-#RUN CI=true npm test
+
 RUN npm install && npm run webapp:build:prod
 
 
@@ -25,6 +24,8 @@ RUN rm -rf ./*
 COPY --from=builder /app /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY /src/main/docker/frontend/default.conf /etc/nginx/conf.d/
+RUN rm -rf /target
+RUN rm -rf /src/
 EXPOSE 9000
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
