@@ -1,0 +1,14 @@
+image:
+  repository: 737929421946.dkr.ecr.eu-west-1.amazonaws.com/chqd1airecrcaradvgene001/car-advisor
+  tag: SNAPSHOT-4.0.0 # Name of tag in image
+
+microservice: car-advisor # Name of microservice
+namespace: caradv # Namespace name
+path: /caradv/car-advisor #Path where the ingress expose microservice
+hostname: caradv.sceu.dev.corp #Hostname expose ingress
+#https: true #If microservice is https
+port: 8080 #Internal port expose in microservice
+configurationFiles:
+  - name: car-advisor-config-map
+    data: |-
+      PATH_LOG_FILE: /tmp/paydashboard/aud

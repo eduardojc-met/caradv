@@ -1,0 +1,13 @@
+CERT:
+  certnode1:
+    NAMESPACE: 'caradv'
+    CREDENTIALS: 'aws-credential-cwe-caradv'
+    EKS_NAME: 'cwed1aireksaccwegene001'
+    EKS_REGION: 'eu-west-1'
+    ROLE_ARN: 'arn:aws:iam::737929421946:role/eks-namespace-car-advisor'
+REGISTRY:
+  CERT:
+    REGISTRY_URL: '737929421946.dkr.ecr.eu-west-1.amazonaws.com'
+    REPOSITORY: 'chqd1airecrcaradvgene001'
+    REGISTRY_CRED: 'REGISTRY_CREDS_AWS_DEV'
+    REGISTRY_KMS: 'arn:aws:kms:eu-west-1:737929421946:key/9960f209-4178-4c12-8511-d415b5cb979c'
